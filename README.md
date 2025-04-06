@@ -17,7 +17,7 @@ The code behind this is not robust. Whilst it does read and save back to the sel
 
 ## Interesting Stuff
 
-Because the drawing XML is embedded in the PNG metadata, you can extract it. I've included a sample (see extract_xml.py) to use. You can then have all sorts of fun my reading the shapes and lines (vertecies and edges) from the diagram data.
+Because the drawing XML is embedded in the PNG metadata, you can extract it. I've included a sample (see extract_xml.py) to use. You can then read the shapes and lines (vertecies and edges) from the diagram data.
 
 This leads to all sorts of fun, like linking rows to entities in the diagram, or having other rows do lookups to see if they are 'mentioned' in the diagrams.
 
