@@ -90,7 +90,7 @@ document.addEventListener('dblclick', function (evt) {
             // Updates the data URI of the image
             source.setAttribute('src', msg.data);
             grist.docApi.applyUserActions([
-              ['UpdateRecord', currentTableName, currentRecordId, { Diagram: msg.data }]
+              ['UpdateRecord', currentTableName, currentRecordId, grist.mapColumnNames({ Diagram: msg.data }, {reverse: true})]
             ]);
           }
 
