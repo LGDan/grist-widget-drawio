@@ -46,8 +46,10 @@ grist.getTable().getTableId().then((name) => {
 grist.onRecord(record => {
   img = document.getElementById("diagram");
   currentRecordId = record.id;
-  if (record.Diagram) {
-    img.setAttribute("src", record.Diagram);
+  console.log(record);
+  recordMapped = grist.mapColumnNames(record);
+  if (recordMapped.Diagram) {
+    img.setAttribute("src", recordMapped.Diagram);
     if (iframe.parentElement == document.body) {
       console.warn("Record switched whilst iframe open");
       document.body.removeChild(iframe);
