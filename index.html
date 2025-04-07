@@ -89,8 +89,11 @@ document.addEventListener('dblclick', function (evt) {
           else if (msg.event == 'export') {
             // Updates the data URI of the image
             source.setAttribute('src', msg.data);
+            mappedColumnObject = grist.mapColumnNames({ Diagram: msg.data }, {reverse: true});
+            delete mappedColumnObject["id"];
+            console.log(mappedColumnObject);
             grist.docApi.applyUserActions([
-              ['UpdateRecord', currentTableName, currentRecordId, grist.mapColumnNames({ Diagram: msg.data }, {reverse: true})]
+              ['UpdateRecord', currentTableName, currentRecordId, mappedColumnObject]
             ]);
           }
 
