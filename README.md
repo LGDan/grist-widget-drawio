@@ -3,9 +3,9 @@ Custom widget for Grist to embed and edit draw.io diagrams.
 
 ## How-To
 
-1. To use this, ensure you have a table called `Objects` and a column called `Diagram` in the table you wish to link to this widget. 
+1. To use this, ensure you have a column called `Diagram` in the table you wish to link to this widget.
 
-> I'm aware this is a limitation at the moment, I'm looking into the grist widget API to make this configurable/automatic.
+> I'm aware this is a limitation as this does not work with the column mapping feature. I'm working on it.
 
 2. Add a new custom widget, and use this URL: `https://lgdan.github.io/grist-widget-drawio/`
 3. Double click the placeholder image, and use the draw.io editor as you would normally. Hit save to sync back a PNG export to the selected row's `Diagram` column.

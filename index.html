@@ -39,6 +39,10 @@ grist.onRecords(table => {
 
 });
 
+grist.getTable().getTableId().then((name) => {
+    currentTableName = name;
+});
+
 grist.onRecord(record => {
   img = document.getElementById("diagram");
   currentRecordId = record.id;
@@ -86,7 +90,7 @@ document.addEventListener('dblclick', function (evt) {
             // Updates the data URI of the image
             source.setAttribute('src', msg.data);
             grist.docApi.applyUserActions([
-              ['UpdateRecord', 'Objects', currentRecordId, { Diagram: msg.data }]
+              ['UpdateRecord', currentTableName, currentRecordId, { Diagram: msg.data }]
             ]);
           }
 
